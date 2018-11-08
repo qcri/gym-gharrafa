@@ -1,0 +1,23 @@
+<configuration>
+    <input>
+        <net-file value="gharrafa.net.xml"/>
+        <route-files value="od_002.rou.xml"/>
+        <gui-settings-file value="gui.settings.xml"/>
+	<!--
+        <additional-files value="gharrafa.add.xml"/>
+        -->
+    </input>
+    <time>
+        <begin value="25200"/>
+        <end value="100000"/>
+    </time>
+    <output>
+        <queue-output value="out_queue.xml"/>
+        <lanechange-output value="out_lanechange.xml"/>
+    </output>
+    <!--
+    <processing>
+      
+    </processing>
+   -->
+  </configuration>
