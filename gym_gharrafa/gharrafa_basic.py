@@ -18,7 +18,7 @@ class GharrafaBasicEnv(gym.Env):
         self.OBSERVEDPERIOD = 5
 
         #In this version the observation space is the set of sensors
-        self.observation_space = spaces.Box(low=0, high=255, shape=(3,screen_height, screen_width), dtype=np.uint8)
+        self.observation_space = spaces.Box(low=0, high=1, shape=(1,8), dtype=np.float32)
 
         #Set action space as the set of possible phases
         self.action_space = spaces.Discrete(4)
