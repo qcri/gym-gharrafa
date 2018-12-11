@@ -55,11 +55,11 @@ class GharrafaBasicEnv(gym.Env):
 
 
     def _configure_environment(self):
-        sumoBinary = "/usr/bin/sumo-gui"
+        sumoBinary = set_sumo_home.sumoBinary
 
         traci.start([sumoBinary, "-c", "./asset/tl.sumocfg",
                              "--log", "simul_log",
-            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1", "--window-size", "1034,1266"],label=self.runcode)
+            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1", "--window-size", "1034,1766"],label=self.runcode)
 
         self.conn = traci.getConnection(self.runcode)
 
