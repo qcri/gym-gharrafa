@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Thu 01 Nov 2018 02:48:25 PM +03 by Netedit Version 0.32.0
+<!-- generated on Wed 28 Nov 2018 02:50:22 PM +03 by Netedit Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="gharrafa.net.xml"/>
+        <sumo-net-file value="/home/gvantini/TLRL/gharrafa.net.xml"/>
     </input>
 
     <output>
@@ -267,7 +267,6 @@
     <connection from="5652" to="10393" fromLane="0" toLane="0"/>
     <connection from="5652" to="10393" fromLane="0" toLane="1"/>
 
-    <connection from="5654" to="7567.0" fromLane="0" toLane="0"/>
     <connection from="5654" to="-6487" fromLane="0" toLane="0"/>
 
     <connection from="6038" to="6041" fromLane="0" toLane="0"/>
@@ -447,7 +446,7 @@
     <connection from="7545" to="6526" fromLane="2" toLane="2"/>
     <connection from="7545" to="6526" fromLane="2" toLane="3" pass="1"/>
 
-    <connection from="7546" to="6511" fromLane="0" toLane="0" keepClear="0"/>
+    <connection from="7546" to="6511" fromLane="0" toLane="0"/>
 
     <connection from="7547" to="7548" fromLane="0" toLane="0" pass="1" keepClear="0"/>
     <connection from="7547" to="7548" fromLane="1" toLane="1" pass="1" keepClear="0"/>

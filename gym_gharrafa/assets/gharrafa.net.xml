@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Thu 01 Nov 2018 02:48:11 PM +03 by Netedit Version 0.32.0
+<!-- generated on Sun Dec  9 12:24:59 2018 by SUMO netconvert Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
         <sumo-net-file value="gharrafa.net.xml"/>
+        <tllogic-files value="gharrafa.tll.xml"/>
     </input>
 
     <output>
-        <output-file value="/home/gvantini/TLRL/gharrafa.net.xml"/>
+        <output-file value="gharrafa3.net.xml"/>
     </output>
 
     <processing>
@@ -21,10 +22,6 @@
         <rectangular-lane-cut value="false"/>
         <walkingareas value="false"/>
     </processing>
-
-    <visualisation>
-        <registry-viewport value="true"/>
-    </visualisation>
 
 </configuration>
 -->
@@ -389,37 +386,37 @@
         <lane id=":6287_3_0" index="0" speed="24.99" length="52.68" shape="891.38,2179.08 913.21,2131.13"/>
     </edge>
     <edge id=":6287_4" function="internal">
-        <lane id=":6287_4_0" index="0" speed="27.77" length="52.91" shape="894.37,2180.48 916.30,2132.32"/>
+        <lane id=":6287_4_0" index="0" speed="27.77" length="53.18" shape="894.37,2180.48 901.38,2167.66 909.01,2156.11 916.28,2145.44 922.23,2135.23"/>
     </edge>
     <edge id=":6287_5" function="internal">
-        <lane id=":6287_5_0" index="0" speed="24.99" length="52.77" shape="894.37,2180.48 899.12,2166.81 901.71,2153.33 903.75,2140.64 906.83,2129.31"/>
-        <lane id=":6287_5_1" index="1" speed="24.99" length="52.77" shape="894.37,2180.48 899.62,2166.95 903.31,2153.79 906.44,2141.41 910.02,2130.22"/>
-        <lane id=":6287_5_2" index="2" speed="24.99" length="52.77" shape="894.37,2180.48 913.21,2131.13"/>
+        <lane id=":6287_5_0" index="0" speed="24.99" length="52.80" shape="894.37,2180.48 899.12,2166.81 901.71,2153.33 903.75,2140.64 906.83,2129.31"/>
+    </edge>
+    <edge id=":6287_6" function="internal">
+        <lane id=":6287_6_0" index="0" speed="27.77" length="52.92" shape="894.37,2180.48 916.30,2132.32"/>
+        <lane id=":6287_6_1" index="1" speed="27.77" length="52.92" shape="894.37,2180.48 919.26,2133.78"/>
     </edge>
     <edge id=":6287_8" function="internal">
-        <lane id=":6287_8_0" index="0" speed="27.77" length="53.05" shape="894.37,2180.48 919.26,2133.78"/>
-        <lane id=":6287_8_1" index="1" speed="27.77" length="53.05" shape="894.37,2180.48 901.38,2167.66 909.01,2156.11 916.28,2145.44 922.23,2135.23"/>
-    </edge>
-    <edge id=":6287_10" function="internal">
-        <lane id=":6287_10_0" index="0" speed="24.99" length="53.22" shape="897.36,2181.88 902.64,2168.27 906.39,2154.94 909.59,2142.40 913.21,2131.13"/>
+        <lane id=":6287_8_0" index="0" speed="24.99" length="52.92" shape="894.37,2180.48 899.62,2166.95 903.31,2153.79 906.44,2141.41 910.02,2130.22"/>
+        <lane id=":6287_8_1" index="1" speed="24.99" length="52.92" shape="894.37,2180.48 913.21,2131.13"/>
+        <lane id=":6287_8_2" index="2" speed="24.99" length="52.92" shape="897.36,2181.88 902.64,2168.27 906.39,2154.94 909.59,2142.40 913.21,2131.13"/>
     </edge>
     <edge id=":6287_11" function="internal">
-        <lane id=":6287_11_0" index="0" speed="27.77" length="53.05" shape="897.36,2181.88 916.30,2132.32"/>
+        <lane id=":6287_11_0" index="0" speed="27.77" length="52.92" shape="897.36,2181.88 916.30,2132.32"/>
+        <lane id=":6287_11_1" index="1" speed="27.77" length="52.92" shape="897.36,2181.88 919.26,2133.78"/>
+        <lane id=":6287_11_2" index="2" speed="27.77" length="52.92" shape="897.36,2181.88 922.23,2135.23"/>
     </edge>
-    <edge id=":6287_12" function="internal">
-        <lane id=":6287_12_0" index="0" speed="24.99" length="53.32" shape="897.36,2181.88 902.14,2168.13 904.80,2154.49 906.90,2141.63 910.02,2130.22"/>
-    </edge>
-    <edge id=":6287_13" function="internal">
-        <lane id=":6287_13_0" index="0" speed="27.77" length="52.86" shape="897.36,2181.88 919.26,2133.78"/>
-        <lane id=":6287_13_1" index="1" speed="27.77" length="52.86" shape="897.36,2181.88 922.23,2135.23"/>
+    <edge id=":6287_14" function="internal">
+        <lane id=":6287_14_0" index="0" speed="24.99" length="53.32" shape="897.36,2181.88 902.14,2168.13 904.80,2154.49 906.90,2141.63 910.02,2130.22"/>
     </edge>
     <edge id=":6287_15" function="internal">
-        <lane id=":6287_15_0" index="0" speed="24.99" length="53.83" shape="900.35,2183.28 905.16,2169.45 907.89,2155.64 910.06,2142.62 913.21,2131.13"/>
+        <lane id=":6287_15_0" index="0" speed="27.77" length="53.47" shape="900.35,2183.28 905.49,2169.57 909.03,2156.06 912.21,2143.42 916.30,2132.32"/>
     </edge>
     <edge id=":6287_16" function="internal">
-        <lane id=":6287_16_0" index="0" speed="27.77" length="53.09" shape="900.35,2183.28 905.49,2169.57 909.03,2156.06 912.21,2143.42 916.30,2132.32"/>
-        <lane id=":6287_16_1" index="1" speed="27.77" length="53.09" shape="900.35,2183.28 919.26,2133.78"/>
-        <lane id=":6287_16_2" index="2" speed="27.77" length="53.09" shape="900.35,2183.28 922.23,2135.23"/>
+        <lane id=":6287_16_0" index="0" speed="24.99" length="53.83" shape="900.35,2183.28 905.16,2169.45 907.89,2155.64 910.06,2142.62 913.21,2131.13"/>
+    </edge>
+    <edge id=":6287_17" function="internal">
+        <lane id=":6287_17_0" index="0" speed="27.77" length="52.90" shape="900.35,2183.28 919.26,2133.78"/>
+        <lane id=":6287_17_1" index="1" speed="27.77" length="52.90" shape="900.35,2183.28 922.23,2135.23"/>
     </edge>
     <edge id=":6289_0" function="internal">
         <lane id=":6289_0_0" index="0" speed="22.21" length="3.43" shape="1266.66,1377.48 1266.45,1374.25"/>
@@ -607,13 +604,10 @@
         <lane id=":6319_2_6" index="6" speed="22.22" length="11.15" shape="982.89,1752.84 980.30,1751.05 978.34,1750.11 976.30,1749.30 973.47,1747.87"/>
     </edge>
     <edge id=":6320_0" function="internal">
-        <lane id=":6320_0_0" index="0" speed="13.88" length="33.39" shape="1134.17,1902.90 1131.14,1908.66 1125.29,1916.85 1119.01,1924.82 1114.68,1929.90"/>
+        <lane id=":6320_0_0" index="0" speed="13.88" length="33.67" shape="1134.24,1902.60 1131.19,1908.41 1125.32,1916.70 1119.02,1924.77 1114.68,1929.90"/>
     </edge>
     <edge id=":6320_1" function="internal">
-        <lane id=":6320_1_0" index="0" speed="15.27" length="20.66" shape="1112.26,1927.66 1115.08,1924.85 1118.25,1921.56 1121.52,1917.23 1124.59,1911.30"/>
-    </edge>
-    <edge id=":6320_2" function="internal">
-        <lane id=":6320_2_0" index="0" speed="13.88" length="4.82" shape="1112.26,1927.66 1113.71,1927.31 1114.59,1927.57 1114.92,1928.43 1114.68,1929.90"/>
+        <lane id=":6320_1_0" index="0" speed="13.88" length="4.82" shape="1112.26,1927.66 1113.71,1927.31 1114.59,1927.57 1114.92,1928.43 1114.68,1929.90"/>
     </edge>
     <edge id=":6404_0" function="internal">
         <lane id=":6404_0_0" index="0" speed="15.27" length="15.59" shape="1716.20,490.87 1713.86,493.44 1711.57,495.86 1709.26,498.88 1706.87,503.24"/>
@@ -2084,11 +2078,11 @@
         <lane id="7565_0" index="0" speed="13.88" length="108.76" shape="987.18,1731.96 996.87,1733.83 1008.40,1735.05 1022.35,1734.39 1034.07,1731.65 1046.99,1726.16 1054.75,1721.69 1063.03,1715.85 1071.99,1706.90 1082.58,1695.58"/>
     </edge>
     <edge id="7566" from="7749" to="6320" priority="88" spreadType="center" shape="1358.61,1950.30 1325.31,1936.95 1306.28,1929.60 1291.03,1923.49 1277.20,1917.30 1260.81,1909.95 1212.28,1886.91 1181.93,1871.67 1177.00,1869.12 1172.84,1867.77 1169.38,1866.71 1164.94,1866.00 1160.42,1866.13 1155.34,1866.97 1149.63,1868.93 1146.38,1870.98 1142.56,1874.71 1140.23,1878.09 1138.39,1881.83 1136.83,1886.76 1136.19,1890.50 1136.04,1893.53 1135.40,1896.92 1134.93,1899.54 1133.61,1905.37 1133.24,1907.62 1129.35,1916.92 1124.59,1922.79 1110.68,1934.31 1101.91,1943.68">
-        <lane id="7566_0" index="0" speed="13.88" length="186.20" shape="1284.32,1920.49 1277.20,1917.30 1260.81,1909.95 1212.28,1886.91 1181.93,1871.67 1177.00,1869.12 1172.84,1867.77 1169.38,1866.71 1164.94,1866.00 1160.42,1866.13 1155.34,1866.97 1149.63,1868.93 1146.38,1870.98 1142.56,1874.71 1140.23,1878.09 1138.39,1881.83 1136.83,1886.76 1136.19,1890.50 1136.04,1893.53 1135.40,1896.92 1134.93,1899.54 1134.17,1902.90"/>
+        <lane id="7566_0" index="0" speed="13.88" length="185.90" shape="1284.32,1920.49 1277.20,1917.30 1260.81,1909.95 1212.28,1886.91 1181.93,1871.67 1177.00,1869.12 1172.84,1867.77 1169.38,1866.71 1164.94,1866.00 1160.42,1866.13 1155.34,1866.97 1149.63,1868.93 1146.38,1870.98 1142.56,1874.71 1140.23,1878.09 1138.39,1881.83 1136.83,1886.76 1136.19,1890.50 1136.04,1893.53 1135.40,1896.92 1134.93,1899.54 1134.24,1902.60"/>
     </edge>
     <edge id="7567.0" from="6320" to="gneJ1" priority="68" spreadType="center" shape="1098.42,1940.18 1103.79,1939.20 1111.82,1930.41 1117.61,1924.49 1120.92,1920.91 1122.65,1918.33 1125.21,1914.10 1127.60,1908.38 1128.93,1903.00 1129.47,1898.68 1127.36,1891.45 1123.67,1886.06">
-        <lane id="7567.0_0" index="0" speed="16.66" length="23.83" shape="1124.59,1911.30 1126.03,1907.86 1127.30,1902.70 1127.79,1898.81 1125.85,1892.16 1122.31,1886.99"/>
-        <lane id="7567.0_1" index="1" speed="16.66" length="23.83" shape="1130.13,1905.03 1130.56,1903.30 1131.15,1898.55 1128.87,1890.74 1125.03,1885.13"/>
+        <lane id="7567.0_0" index="0" speed="16.66" length="17.48" shape="1127.39,1902.06 1127.79,1898.81 1125.85,1892.16 1122.31,1886.99"/>
+        <lane id="7567.0_1" index="1" speed="16.66" length="17.48" shape="1130.71,1902.09 1131.15,1898.55 1128.87,1890.74 1125.03,1885.13"/>
     </edge>
     <edge id="7568" from="6315" to="7755" priority="73" spreadType="center" shape="1265.65,1881.61 1290.99,1880.69 1298.34,1881.17 1303.25,1882.69 1307.46,1884.85 1458.91,1961.10 1474.73,1966.49">
         <lane id="7568_0" index="0" speed="13.88" length="198.61" shape="1283.75,1880.95 1290.99,1880.69 1298.34,1881.17 1303.25,1882.69 1307.46,1884.85 1458.91,1961.10 1463.24,1962.57"/>
@@ -2447,8 +2441,469 @@
         <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
         <phase duration="5" state="yyyyyyrrrrrryyyyyyrrrrrryyyyyyy"/>
         <phase duration="30" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+        <phase duration="5" state="rrrrrrGGGyyyrrrrrrGGGyyyrrrrrrr"/>
+        <phase duration="15" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="5" state="rrrrrryyyrrrGGGrrryyyrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="0mod" offset="0">
+        <phase duration="90" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="5" state="yyyyyyrrrrrryyyyyyrrrrrryyyyyyy"/>
+        <phase duration="43" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
         <phase duration="5" state="rrrrrryyyyyyrrrrrryyyyyyrrrrrrr"/>
-        <phase duration="15" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+        <phase duration="22" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="5" state="rrrrrryyyrrrGGGrrryyyrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from ALL RED to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to ALL RED" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGoooooorrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G E" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G EW" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGoooooorrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G N BY S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGoooooorrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G NS" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyoooooorrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyoooooorrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G S BY N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyoooooorrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G W" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGoooooorrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E BY W to G W BY E" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to ALL RED" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G E BY W" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G EW" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G N BY S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G NS" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G S BY N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G W" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G E to G W BY E" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to ALL RED" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G E" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G E BY W" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G N BY S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G NS" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G S" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G S BY N" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G W" offset="0">
+        <phase duration="4" state="yyyyyyrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G EW to G W BY E" offset="0">
+        <phase duration="4" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyoooooorrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyoooooorrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyoooooorrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N BY S to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGoooooorrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G N to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G NS to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyyyyrrrrrrr"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrryyyoooooooooo"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyoooooooooo"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S BY N to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyoooooooooo"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyyyyrrrrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G W" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G S to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGyyyrrrrrryyyrrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to ALL RED" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G E" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G E BY W" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G EW" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G N" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G N BY S" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G NS" offset="0">
+        <phase duration="4" state="ooooooooorrryyyyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G S" offset="0">
+        <phase duration="4" state="ooooooooorrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G S BY N" offset="0">
+        <phase duration="4" state="ooooooooorrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W BY E to G W" offset="0">
+        <phase duration="4" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to ALL RED" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G E" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G E BY W" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGoooooorrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G EW" offset="0">
+        <phase duration="4" state="rrrrrryyyrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="GGGGGGrrrrrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G N" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G N BY S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGoooooorrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G NS" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyyyyrrrrrryyyyyyy"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGGGGrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G S" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G S BY N" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrryyyyyyrrrrrrGGGGGGG"/>
+        <phase duration="60" state="rrrrrrGGGGGGrrrrrrGGGoooooooooo"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="from G W to G W BY E" offset="0">
+        <phase duration="4" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="60" state="ooooooooorrrGGGGGGrrrrrrGGGGGGG"/>
+    </tlLogic>
+    <tlLogic id="6317" type="static" programID="scat" offset="0">
+        <phase duration="50" state="rrrrrrGGGrrrGGGGGGrrrrrrGGGGGGG"/>
+        <phase duration="5" state="rrrrrryyyrrrGGGyyyrrrrrrGGGGGGG"/>
+        <phase duration="50" state="GGGGGGrrrrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="5" state="yyyyyyrrrrrryyyrrrGGGrrrGGGGGGG"/>
+        <phase duration="10" state="rrrrrrGGGGGGrrrrrrGGGrrrGGGGGGG"/>
+        <phase duration="5" state="rrrrrrGGGyyyrrrrrrGGGrrryyyyyyy"/>
+        <phase duration="10" state="rrrrrrGGGrrrGGGrrrGGGGGGrrrrrrr"/>
+        <phase duration="5" state="rrrrrrGGGrrrGGGrrrGGGyyyrrrrrrr"/>
+        <phase duration="15" state="rrrrrrGGGrrrGGGrrrGGGrrrGGGGGGG"/>
+        <phase duration="5" state="rrrrrrGGGrrrGGGrrryyyrrrGGGGGGG"/>
     </tlLogic>
     <tlLogic id="cluster_1811_1970_2400_6194" type="static" programID="0" offset="0">
         <phase duration="29" state="rrrGGgrrrrrGGg"/>
@@ -2660,26 +3115,26 @@
         <request index="3" response="0001" foes="0001" cont="0"/>
     </junction>
     <junction id="6283" type="dead_end" x="115.00" y="1045.00" incLanes="7677_0 7677_1 7677_2" intLanes="" shape="110.61,1047.17 119.39,1042.83"/>
-    <junction id="6287" type="priority" x="892.33" y="2188.73" incLanes="6522_0 6522_1 6522_2 6522_3" intLanes=":6287_0_0 :6287_0_1 :6287_2_0 :6287_3_0 :6287_4_0 :6287_5_0 :6287_5_1 :6287_5_2 :6287_8_0 :6287_8_1 :6287_10_0 :6287_11_0 :6287_12_0 :6287_13_0 :6287_13_1 :6287_15_0 :6287_16_0 :6287_16_1 :6287_16_2" shape="923.66,2135.93 914.86,2131.62 914.75,2131.57 905.29,2128.87 889.94,2178.40 901.80,2183.96">
+    <junction id="6287" type="priority" x="892.33" y="2188.73" incLanes="6522_0 6522_1 6522_2 6522_3" intLanes=":6287_0_0 :6287_0_1 :6287_2_0 :6287_3_0 :6287_4_0 :6287_5_0 :6287_6_0 :6287_6_1 :6287_8_0 :6287_8_1 :6287_8_2 :6287_11_0 :6287_11_1 :6287_11_2 :6287_14_0 :6287_15_0 :6287_16_0 :6287_17_0 :6287_17_1" shape="923.66,2135.93 914.86,2131.62 914.75,2131.57 905.29,2128.87 889.94,2178.40 901.80,2183.96">
         <request index="0" response="0000000000000000000" foes="0000000000000100000" cont="0"/>
-        <request index="1" response="0000000000000000000" foes="0000001000001000000" cont="0"/>
-        <request index="2" response="0000000000000000000" foes="0010000100000010000" cont="0"/>
-        <request index="3" response="0000000000000000000" foes="0001000010010000000" cont="0"/>
-        <request index="4" response="0000000000000000100" foes="0010000100000000100" cont="0"/>
+        <request index="1" response="0000000000000000000" foes="0000100000100000000" cont="0"/>
+        <request index="2" response="0000000000000000000" foes="0001000100001000000" cont="0"/>
+        <request index="3" response="0000000000000000000" foes="0010000011000000000" cont="0"/>
+        <request index="4" response="0000000000000000000" foes="1000010000000000000" cont="0"/>
         <request index="5" response="0000000000000000001" foes="0000000000000000001" cont="0"/>
-        <request index="6" response="0000000000000000010" foes="0000001000000000010" cont="0"/>
-        <request index="7" response="0000000000000001000" foes="0001000010000001000" cont="0"/>
-        <request index="8" response="0000000000000000000" foes="0100010000000000000" cont="0"/>
-        <request index="9" response="0000000000000000000" foes="1000100000000000000" cont="0"/>
-        <request index="10" response="0000000000010001000" foes="0001000000010001000" cont="0"/>
-        <request index="11" response="0000000000000010100" foes="0010000000000010100" cont="0"/>
-        <request index="12" response="0000000000001000010" foes="0000000000001000010" cont="0"/>
-        <request index="13" response="0000000000100000000" foes="0100000000100000000" cont="0"/>
-        <request index="14" response="0000000001000000000" foes="1000000001000000000" cont="0"/>
-        <request index="15" response="0000000010010001000" foes="0000000010010001000" cont="0"/>
-        <request index="16" response="0000000100000010100" foes="0000000100000010100" cont="0"/>
-        <request index="17" response="0000010000100000000" foes="0000010000100000000" cont="0"/>
-        <request index="18" response="0000100001000000000" foes="0000100001000000000" cont="0"/>
+        <request index="6" response="0000000000000000100" foes="0001000100000000100" cont="0"/>
+        <request index="7" response="0000000000000000000" foes="0100001000000000000" cont="0"/>
+        <request index="8" response="0000000000000000010" foes="0000100000000000010" cont="0"/>
+        <request index="9" response="0000000000000001000" foes="0010000010000001000" cont="0"/>
+        <request index="10" response="0000000001000001000" foes="0010000001000001000" cont="0"/>
+        <request index="11" response="0000000000001000100" foes="0001000000001000100" cont="0"/>
+        <request index="12" response="0000000000010000000" foes="0100000000010000000" cont="0"/>
+        <request index="13" response="0000000000000010000" foes="1000000000000010000" cont="0"/>
+        <request index="14" response="0000000000100000010" foes="0000000000100000010" cont="0"/>
+        <request index="15" response="0000000100001000100" foes="0000000100001000100" cont="0"/>
+        <request index="16" response="0000000011000001000" foes="0000000011000001000" cont="0"/>
+        <request index="17" response="0000001000010000000" foes="0000001000010000000" cont="0"/>
+        <request index="18" response="0000010000000010000" foes="0000010000000010000" cont="0"/>
     </junction>
     <junction id="6289" type="priority" x="1268.80" y="1376.98" incLanes="5484_0 5484_1 6489_0 6489_1 6489_2" intLanes=":6289_0_0 :6289_0_1 :6289_0_2 :6289_3_0 :6289_3_1 :6289_3_2 :6289_3_3 :6289_3_4 :6289_3_5" shape="1273.85,1377.79 1265.01,1373.55 1265.25,1376.72 1270.98,1379.79">
         <request index="0" response="000000000" foes="111111000" cont="0"/>
@@ -2800,10 +3255,9 @@
         <request index="7" response="000101011" foes="000101011" cont="0"/>
         <request index="8" response="001000011" foes="001000011" cont="0"/>
     </junction>
-    <junction id="6320" type="priority" x="1100.86" y="1942.41" incLanes="7566_0 5654_0" intLanes=":6320_0_0 :6320_1_0 :6320_2_0" shape="1117.92,1928.82 1127.12,1918.27 1135.65,1903.70 1132.71,1902.11 1111.09,1926.58 1115.86,1930.99" customShape="1">
-        <request index="0" response="000" foes="100" cont="0"/>
-        <request index="1" response="000" foes="000" cont="0"/>
-        <request index="2" response="001" foes="001" cont="0"/>
+    <junction id="6320" type="priority" x="1100.86" y="1942.41" incLanes="7566_0 5654_0" intLanes=":6320_0_0 :6320_1_0" shape="1117.92,1928.82 1127.12,1918.27 1135.69,1903.07 1132.71,1902.11 1125.85,1902.04 1111.09,1926.58 1115.86,1930.99" customShape="1">
+        <request index="0" response="00" foes="10" cont="0"/>
+        <request index="1" response="01" foes="01" cont="0"/>
     </junction>
     <junction id="6392" type="dead_end" x="1204.40" y="2751.25" incLanes="10394_0 10394_1 10394_2" intLanes="" shape="1206.03,2746.63 1202.77,2755.87"/>
     <junction id="6404" type="priority" x="1702.27" y="509.26" incLanes="7523_0 6123_0 6123_1" intLanes=":6404_0_0 :6404_1_0 :6404_1_1" shape="1717.52,491.79 1714.89,489.94 1714.55,489.73 1708.61,487.08 1702.43,501.18 1708.33,503.92">
@@ -3583,8 +4037,7 @@
     <connection from="5485" to="7801" fromLane="2" toLane="2" keepClear="0" via=":6460_1_5" dir="s" state="m"/>
     <connection from="5652" to="10393" fromLane="0" toLane="0" via=":6876_0_0" dir="s" state="m"/>
     <connection from="5652" to="10393" fromLane="0" toLane="1" via=":6876_0_1" dir="s" state="m"/>
-    <connection from="5654" to="7567.0" fromLane="0" toLane="0" via=":6320_1_0" dir="s" state="m"/>
-    <connection from="5654" to="-6487" fromLane="0" toLane="0" via=":6320_2_0" dir="t" state="m"/>
+    <connection from="5654" to="-6487" fromLane="0" toLane="0" via=":6320_1_0" dir="t" state="m"/>
     <connection from="6038" to="6041" fromLane="0" toLane="0" via=":cluster_6272_6273_6278_6279_7759_7762_7763_9153_2_0" tl="cluster_6272_6273_6278_6279_7759_7762_7763_9153" linkIndex="2" dir="s" state="o"/>
     <connection from="6038" to="6041" fromLane="1" toLane="1" via=":cluster_6272_6273_6278_6279_7759_7762_7763_9153_2_1" tl="cluster_6272_6273_6278_6279_7759_7762_7763_9153" linkIndex="3" dir="s" state="o"/>
     <connection from="6039" to="7359" fromLane="0" toLane="0" pass="1" via=":7250_1_0" dir="s" state="M"/>
@@ -3649,21 +4102,21 @@
     <connection from="6522" to="10339" fromLane="0" toLane="1" via=":6287_0_1" dir="s" state="M"/>
     <connection from="6522" to="6489" fromLane="0" toLane="0" keepClear="0" via=":6287_2_0" dir="s" state="M"/>
     <connection from="6522" to="10339" fromLane="0" toLane="2" via=":6287_3_0" dir="s" state="M"/>
-    <connection from="6522" to="6489" fromLane="1" toLane="0" keepClear="0" via=":6287_4_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="1" toLane="2" via=":6287_4_0" dir="s" state="M"/>
     <connection from="6522" to="10339" fromLane="1" toLane="0" via=":6287_5_0" dir="s" state="m"/>
-    <connection from="6522" to="10339" fromLane="1" toLane="1" keepClear="0" via=":6287_5_1" dir="s" state="m"/>
-    <connection from="6522" to="10339" fromLane="1" toLane="2" keepClear="0" via=":6287_5_2" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="1" toLane="1" keepClear="0" via=":6287_8_0" dir="s" state="M"/>
-    <connection from="6522" to="6489" fromLane="1" toLane="2" via=":6287_8_1" dir="s" state="M"/>
-    <connection from="6522" to="10339" fromLane="2" toLane="2" keepClear="0" via=":6287_10_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="1" toLane="0" keepClear="0" via=":6287_6_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="1" toLane="1" keepClear="0" via=":6287_6_1" dir="s" state="M"/>
+    <connection from="6522" to="10339" fromLane="1" toLane="1" keepClear="0" via=":6287_8_0" dir="s" state="m"/>
+    <connection from="6522" to="10339" fromLane="1" toLane="2" keepClear="0" via=":6287_8_1" dir="s" state="m"/>
+    <connection from="6522" to="10339" fromLane="2" toLane="2" keepClear="0" via=":6287_8_2" dir="s" state="m"/>
     <connection from="6522" to="6489" fromLane="2" toLane="0" keepClear="0" via=":6287_11_0" dir="s" state="m"/>
-    <connection from="6522" to="10339" fromLane="2" toLane="1" via=":6287_12_0" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="2" toLane="1" keepClear="0" via=":6287_13_0" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="2" toLane="2" keepClear="0" via=":6287_13_1" dir="s" state="m"/>
-    <connection from="6522" to="10339" fromLane="3" toLane="2" via=":6287_15_0" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="3" toLane="0" via=":6287_16_0" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="3" toLane="1" keepClear="0" via=":6287_16_1" dir="s" state="m"/>
-    <connection from="6522" to="6489" fromLane="3" toLane="2" keepClear="0" via=":6287_16_2" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="2" toLane="1" keepClear="0" via=":6287_11_1" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="2" toLane="2" keepClear="0" via=":6287_11_2" dir="s" state="m"/>
+    <connection from="6522" to="10339" fromLane="2" toLane="1" via=":6287_14_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="3" toLane="0" via=":6287_15_0" dir="s" state="m"/>
+    <connection from="6522" to="10339" fromLane="3" toLane="2" via=":6287_16_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="3" toLane="1" keepClear="0" via=":6287_17_0" dir="s" state="m"/>
+    <connection from="6522" to="6489" fromLane="3" toLane="2" keepClear="0" via=":6287_17_1" dir="s" state="m"/>
     <connection from="6526" to="10391" fromLane="0" toLane="0" pass="1" via=":7079_0_0" dir="s" state="M"/>
     <connection from="6526" to="10391" fromLane="0" toLane="1" via=":7079_0_1" dir="s" state="M"/>
     <connection from="6526" to="10389" fromLane="0" toLane="0" via=":7079_2_0" dir="s" state="m"/>
@@ -3725,7 +4178,7 @@
     <connection from="7545" to="6526" fromLane="1" toLane="3" via=":7746_3_3" dir="s" state="m"/>
     <connection from="7545" to="6526" fromLane="2" toLane="2" via=":7746_3_4" dir="s" state="m"/>
     <connection from="7545" to="6526" fromLane="2" toLane="3" pass="1" via=":7746_3_5" dir="s" state="M"/>
-    <connection from="7546" to="6511" fromLane="0" toLane="0" keepClear="0" via=":6411_0_0" dir="s" state="M"/>
+    <connection from="7546" to="6511" fromLane="0" toLane="0" via=":6411_0_0" dir="s" state="M"/>
     <connection from="7547" to="7548" fromLane="0" toLane="0" pass="1" keepClear="0" via=":7739_0_0" tl="6317" linkIndex="9" dir="s" state="o"/>
     <connection from="7547" to="7548" fromLane="1" toLane="1" pass="1" keepClear="0" via=":7739_0_1" tl="6317" linkIndex="10" dir="s" state="o"/>
     <connection from="7547" to="7548" fromLane="2" toLane="2" pass="1" keepClear="0" via=":7739_0_2" tl="6317" linkIndex="11" dir="s" state="o"/>
@@ -4187,21 +4640,21 @@
     <connection from=":6287_0" to="10339" fromLane="1" toLane="1" dir="s" state="M"/>
     <connection from=":6287_2" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":6287_3" to="10339" fromLane="0" toLane="2" dir="s" state="M"/>
-    <connection from=":6287_4" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":6287_4" to="6489" fromLane="0" toLane="2" dir="s" state="M"/>
     <connection from=":6287_5" to="10339" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":6287_5" to="10339" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":6287_5" to="10339" fromLane="2" toLane="2" dir="s" state="M"/>
-    <connection from=":6287_8" to="6489" fromLane="0" toLane="1" dir="s" state="M"/>
-    <connection from=":6287_8" to="6489" fromLane="1" toLane="2" dir="s" state="M"/>
-    <connection from=":6287_10" to="10339" fromLane="0" toLane="2" dir="s" state="M"/>
+    <connection from=":6287_6" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":6287_6" to="6489" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":6287_8" to="10339" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":6287_8" to="10339" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":6287_8" to="10339" fromLane="2" toLane="2" dir="s" state="M"/>
     <connection from=":6287_11" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":6287_12" to="10339" fromLane="0" toLane="1" dir="s" state="M"/>
-    <connection from=":6287_13" to="6489" fromLane="0" toLane="1" dir="s" state="M"/>
-    <connection from=":6287_13" to="6489" fromLane="1" toLane="2" dir="s" state="M"/>
-    <connection from=":6287_15" to="10339" fromLane="0" toLane="2" dir="s" state="M"/>
-    <connection from=":6287_16" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":6287_16" to="6489" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":6287_16" to="6489" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":6287_11" to="6489" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":6287_11" to="6489" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":6287_14" to="10339" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":6287_15" to="6489" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":6287_16" to="10339" fromLane="0" toLane="2" dir="s" state="M"/>
+    <connection from=":6287_17" to="6489" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":6287_17" to="6489" fromLane="1" toLane="2" dir="s" state="M"/>
     <connection from=":6289_0" to="5485" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":6289_0" to="5485" fromLane="1" toLane="1" dir="s" state="M"/>
     <connection from=":6289_0" to="5485" fromLane="2" toLane="2" dir="s" state="M"/>
@@ -4294,8 +4747,7 @@
     <connection from=":6319_2" to="7543" fromLane="5" toLane="1" dir="s" state="M"/>
     <connection from=":6319_2" to="7543" fromLane="6" toLane="2" dir="s" state="M"/>
     <connection from=":6320_0" to="-6487" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":6320_1" to="7567.0" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":6320_2" to="-6487" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":6320_1" to="-6487" fromLane="0" toLane="0" dir="t" state="M"/>
     <connection from=":6404_0" to="7537" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":6404_1" to="7537" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":6404_1" to="7537" fromLane="1" toLane="1" dir="s" state="M"/>

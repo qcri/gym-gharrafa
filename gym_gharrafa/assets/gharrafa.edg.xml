@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Thu 01 Nov 2018 02:48:25 PM +03 by Netedit Version 0.32.0
+<!-- generated on Wed 28 Nov 2018 02:50:22 PM +03 by Netedit Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="gharrafa.net.xml"/>
+        <sumo-net-file value="/home/gvantini/TLRL/gharrafa.net.xml"/>
     </input>
 
     <output>

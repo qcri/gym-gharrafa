@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Thu 01 Nov 2018 02:48:25 PM +03 by Netedit Version 0.32.0
+<!-- generated on Wed 28 Nov 2018 02:50:22 PM +03 by Netedit Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="gharrafa.net.xml"/>
+        <sumo-net-file value="/home/gvantini/TLRL/gharrafa.net.xml"/>
     </input>
 
     <output>
@@ -91,7 +91,7 @@
     <node id="6316" x="909.75" y="1705.53" type="priority"/>
     <node id="6318" x="1144.83" y="1857.31" type="traffic_light" tl="6317"/>
     <node id="6319" x="965.95" y="1747.38" type="priority"/>
-    <node id="6320" x="1100.86" y="1942.41" type="priority" shape="1117.92,1928.82 1127.12,1918.27 1135.65,1903.70 1132.71,1902.11 1111.09,1926.58 1115.86,1930.99"/>
+    <node id="6320" x="1100.86" y="1942.41" type="priority" shape="1117.92,1928.82 1127.12,1918.27 1135.69,1903.07 1132.71,1902.11 1125.85,1902.04 1111.09,1926.58 1115.86,1930.99"/>
     <node id="6392" x="1204.40" y="2751.25" type="dead_end"/>
     <node id="6404" x="1702.27" y="509.26" type="priority"/>
     <node id="6410" x="1482.27" y="997.19" type="priority"/>

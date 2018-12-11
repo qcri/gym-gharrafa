@@ -3,19 +3,26 @@
         <net-file value="gharrafa.net.xml"/>
         <route-files value="od_002.rou.xml"/>
         <gui-settings-file value="gui.settings.xml"/>
-	<!--
-        <additional-files value="gharrafa.add.xml"/>
-        -->
+	<additional-files value="e1test.xml"/>
+        
     </input>
     <time>
         <begin value="25200"/>
-        <end value="100000"/>
+        <end value="28800"/>
     </time>
     <output>
         <queue-output value="out_queue.xml"/>
         <lanechange-output value="out_lanechange.xml"/>
     </output>
-    <!--
+    <traci_server>
+  	<remote-port value="8813"/>
+    </traci_server>
+    
+    <viewsettings>
+	<snapshot file="simu_gharrafa.png" time="30"/>
+    </viewsettings>	
+
+<!--
     <processing>
       
     </processing>
