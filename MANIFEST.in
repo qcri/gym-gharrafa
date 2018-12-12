@@ -1,0 +1,4 @@
+include gymGharrafa/assets/*.xml
+include gymGharrafa/assets/gharrafa_detectors
+include gymGharrafa/assets/gharrafa_matod
+include gymGharrafa/assets/tl.sumocfg
