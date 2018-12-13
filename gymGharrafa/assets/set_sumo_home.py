@@ -5,4 +5,5 @@ if 'SUMO_HOME' not in os.environ:
 
 tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
 sys.path.append(tools)
-sumoBinary = "/usr/bin/sumo-gui"
+sumoBinary = "/usr/bin/sumo"
+sumoBinaryGUI = "/usr/bin/sumo-gui"

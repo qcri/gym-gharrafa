@@ -42,11 +42,11 @@ class GharrafaBasicEnv(gym.Env):
                 self.DETECTORS.append(detname[:-1])
 
         #how many SUMO seconds before next step (observation/action)
-        self.OBSERVEDPERIOD = 5
-        self.SUMOSTEP=1
+        self.OBSERVEDPERIOD = 10
+        self.SUMOSTEP = 0.5
 
         #In this version the observation space is the set of sensors
-        self.observation_space = spaces.Box(low=0, high=255, shape=(1,68), dtype=np.float32)
+        self.observation_space = spaces.Box(low=0, high=255, shape=(1,68), dtype=np.uint8)
 
         #Set action space as the set of possible phases
         self.action_space = spaces.Discrete(11)
@@ -61,9 +61,12 @@ class GharrafaBasicEnv(gym.Env):
     def _configure_environment(self):
         sumoBinary = set_sumo_home.sumoBinary
 
-        traci.start([sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
+        self.argslist = [sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
                              "--log", "simul_log",
-            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1", "--window-size", "1034,1766"],label=self.runcode)
+                             "--collision.action", "none",
+            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1"]
+
+        traci.start(self.argslist,label=self.runcode)
 
         self.conn = traci.getConnection(self.runcode)
 
@@ -80,9 +83,12 @@ class GharrafaBasicEnv(gym.Env):
         else:
             #we are in another program like scat or 0... just change from N
             source = "G N"
+            if source == target:
+                source = "G S"
         if source == target and " to " in current_program:
             #ensure that the phase will not be changed automatically by the
             #program, by adding some time
+            self.conn.trafficlight.setPhase(self.tlsID, 1)
             self.conn.trafficlight.setPhaseDuration(self.tlsID,60.0)
             return False
         else:
@@ -91,33 +97,36 @@ class GharrafaBasicEnv(gym.Env):
             return True
 
     def _observeState(self):
-        timestep = self.conn.simulation.getCurrentTime()/1000
-        for i in range(self.OBSERVEDPERIOD):
-            self.conn.simulationStep()
-            timestep = self.conn.simulation.getCurrentTime()/1000
 
-        lastVehiclesVector = [self.conn.inductionloop.getLastStepVehicleNumber(detID) for detID in self.DETECTORS]
+        selftimestep = self.conn.simulation.getCurrentTime()/1000
+        lastVehiclesVector = np.zeros(len(self.DETECTORS),dtype=np.float32)
+        reward = 0
+        for i in range(int(self.OBSERVEDPERIOD/self.SUMOSTEP)):
+            self.conn.simulationStep()
+            self.timestep = self.conn.simulation.getCurrentTime()/1000
+            lastVehiclesVector += np.array([np.float32(self.conn.inductionloop.getLastStepVehicleNumber(detID)) for detID in self.DETECTORS])
+            reward += np.sum([self.conn.inductionloop.getLastStepVehicleNumber(detID) for detID in self.DETECTORS if "out_for" in detID])
 
         obs = lastVehiclesVector
 
         #TODO: build observation
-        return obs
+        return obs,reward
 
     def _step(self, action):
+        episode_over=False
         self._selectPhase(action)
 
-        #get state
-        obs = self._observeState()
+        #get state and reward
+        obs,reward = self._observeState()
 
-        #build reward
-        reward = 0
-
-        #detect game over state
-        episode_over = True
+        #detect "game over" state
+        if self.timestep >= 28800 or self.conn.lane.getLastStepHaltingNumber("7594_2")>10:
+            episode_over = True
+            self.conn.load(self.argslist[1:])
 
         return obs, reward, episode_over, {}
 
     def _reset(self):
         #go back to the first step of the return
 
-        return self._observeState()
+        return self._observeState()[0]
