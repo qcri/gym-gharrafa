@@ -1,7 +1,7 @@
 <viewsettings>
     <scheme name="custom_2">
         <opengl dither="0"/>
-	<delay value="100"/>
+	<delay value="0"/>
         <background backgroundColor="51,128,51" showGrid="0" gridXSize="100.00" gridYSize="100.00"/>
         <edges laneEdgeMode="0" scaleMode="0" laneShowBorders="1" showLinkDecals="1" showLinkRules="1" showRails="1" hideConnectors="1" widthExaggeration="1.00" minSize="0.00" showDirection="0" showSublanes="1"
                 edgeName_show="0" edgeName_size="50.00" edgeName_color="orange"

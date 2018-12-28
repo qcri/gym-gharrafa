@@ -22,6 +22,8 @@ class GharrafaBasicEnv(gym.Env):
         self.tlsID = "6317"
         self._seed = 31337
 
+        self.GUI = True
+
         self.PHASES = {
         0: "G E",
         1: "G N",
@@ -59,12 +61,22 @@ class GharrafaBasicEnv(gym.Env):
 
 
     def _configure_environment(self):
-        sumoBinary = set_sumo_home.sumoBinary
+
+        if self.GUI:
+            sumoBinary = set_sumo_home.sumoBinaryGUI
+        else:
+            sumoBinary = set_sumo_home.sumoBinary
 
         self.argslist = [sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
                              "--log", "simul_log",
-                             "--collision.action", "none",
-            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1"]
+                             "--collision.action", "remove",
+            "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1",
+            "--collision.mingap-factor", "0",
+            "--collision.check-junctions", "true"]
+
+        # if self.GUI:
+        #     self.arglist.append("--gui-settings-file")
+        #     self.arglist.append(module_path+"/assets/viewsettings.xml")
 
         traci.start(self.argslist,label=self.runcode)
 
@@ -120,7 +132,7 @@ class GharrafaBasicEnv(gym.Env):
         obs,reward = self._observeState()
 
         #detect "game over" state
-        if self.timestep >= 28800 or self.conn.lane.getLastStepHaltingNumber("7594_2")>10:
+        if self.timestep >= 28400 or self.conn.lane.getLastStepHaltingNumber("7594_2")>10 or self.conn.lane.getLastStepHaltingNumber("6511_1")>10:
             episode_over = True
             self.conn.load(self.argslist[1:])
 
