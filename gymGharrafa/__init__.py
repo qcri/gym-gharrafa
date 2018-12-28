@@ -7,6 +7,15 @@ logger = logging.getLogger(__name__)
 register(
     id='gymGharrafa-v0',
     entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : True},
     max_episode_steps = 86400,
-    reward_threshold = 8640
+    reward_threshold = 2500
+)
+
+register(
+    id='gymGharrafa-v1',
+    entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : False},
+    max_episode_steps = 86400,
+    reward_threshold = 2500
 )

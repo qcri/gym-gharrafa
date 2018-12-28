@@ -17,12 +17,12 @@ import traci
 module_path = os.path.dirname(__file__)
 
 class GharrafaBasicEnv(gym.Env):
-    def __init__(self):
+    def __init__(self,GUI=True):
 
         self.tlsID = "6317"
         self._seed = 31337
 
-        self.GUI = True
+        self.GUI = GUI
 
         self.PHASES = {
         0: "G E",
