@@ -19,3 +19,27 @@ register(
     max_episode_steps = 86400,
     reward_threshold = 2500
 )
+
+register(
+    id='gymGharrafa-v2',
+    entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : True, 'Play': "action"},
+    max_episode_steps = 86400,
+    reward_threshold = 2500
+)
+
+register(
+    id='gymGharrafa-v3',
+    entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : True, 'Play': "0mod"},
+    max_episode_steps = 86400,
+    reward_threshold = 2500
+)
+
+register(
+    id='gymGharrafa-v4',
+    entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : True, 'Play': "scat"},
+    max_episode_steps = 86400,
+    reward_threshold = 2500
+)

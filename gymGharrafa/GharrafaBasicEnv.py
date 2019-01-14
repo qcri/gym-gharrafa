@@ -17,12 +17,13 @@ import traci
 module_path = os.path.dirname(__file__)
 
 class GharrafaBasicEnv(gym.Env):
-    def __init__(self,GUI=True):
+    def __init__(self,GUI=True,Play=None):
 
         self.tlsID = "6317"
         self._seed = 31337
 
         self.GUI = GUI
+        self.Play = Play
 
         self.PHASES = {
         0: "G E",
@@ -73,6 +74,11 @@ class GharrafaBasicEnv(gym.Env):
             "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1",
             "--collision.mingap-factor", "0",
             "--collision.check-junctions", "true"]
+
+        if self.Play:
+            self.argslist.append("--game")
+            self.argslist.append("--window-size")
+            self.argslist.append("800,1350")
 
         # if self.GUI:
         #     self.arglist.append("--gui-settings-file")
@@ -125,14 +131,21 @@ class GharrafaBasicEnv(gym.Env):
         return obs,reward
 
     def _step(self, action):
+        if self.Play != None and self.Play != "action":
+            obs,reward = self._observeState()
+            return obs, reward, False, {}
         episode_over=False
         self._selectPhase(action)
 
         #get state and reward
         obs,reward = self._observeState()
 
+        #episodic conditions
+        c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
+        c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
+
         #detect "game over" state
-        if self.timestep >= 28400 or self.conn.lane.getLastStepHaltingNumber("7594_2")>10 or self.conn.lane.getLastStepHaltingNumber("6511_1")>10:
+        if self.Play != "action" and (self.timestep >= 28400 or c1 or c2):
             episode_over = True
             self.conn.load(self.argslist[1:])
 
@@ -140,5 +153,7 @@ class GharrafaBasicEnv(gym.Env):
 
     def _reset(self):
         #go back to the first step of the return
+        if self.Play != None and self.Play != "action":
+            self.conn.trafficlight.setProgram(self.tlsID, self.Play)
 
         return self._observeState()[0]
