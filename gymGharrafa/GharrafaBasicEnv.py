@@ -143,7 +143,7 @@ class GharrafaBasicEnv(gym.Env):
         #episodic conditions
         c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
         c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
-        c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>60
+        c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
 
         #detect "game over" state
         if self.Play != "action" and (self.timestep >= 28600 or c1 or c2 or c3):
