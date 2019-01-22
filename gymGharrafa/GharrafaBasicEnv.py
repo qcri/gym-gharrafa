@@ -57,6 +57,8 @@ class GharrafaBasicEnv(gym.Env):
         #Generate an alphanumerical code for the run label (to run multiple simulations in parallel)
         self.runcode = "".join(random.choices(string.ascii_lowercase + string.digits, k=6))
 
+        self.timestep = 0
+
         self._configure_environment()
 
 
@@ -69,8 +71,7 @@ class GharrafaBasicEnv(gym.Env):
             sumoBinary = set_sumo_home.sumoBinary
 
         self.argslist = [sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
-                             "--log", "simul_log",
-                             "--collision.action", "remove",
+                             "--collision.action", "none",
             "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1",
             "--collision.mingap-factor", "0",
             "--collision.check-junctions", "true"]
@@ -115,13 +116,12 @@ class GharrafaBasicEnv(gym.Env):
             return True
 
     def _observeState(self):
-
-        selftimestep = self.conn.simulation.getCurrentTime()/1000
+        #selftimestep = self.conn.simulation.getCurrentTime()/1000
         lastVehiclesVector = np.zeros(len(self.DETECTORS),dtype=np.float32)
         reward = 0
         for i in range(int(self.OBSERVEDPERIOD/self.SUMOSTEP)):
             self.conn.simulationStep()
-            self.timestep = self.conn.simulation.getCurrentTime()/1000
+            self.timestep += self.SUMOSTEP #self.conn.simulation.getCurrentTime()/1000
             lastVehiclesVector += np.array([np.float32(self.conn.inductionloop.getLastStepVehicleNumber(detID)) for detID in self.DETECTORS])
             reward += np.sum([self.conn.inductionloop.getLastStepVehicleNumber(detID) for detID in self.DETECTORS if "out_for" in detID])
 
@@ -144,15 +144,20 @@ class GharrafaBasicEnv(gym.Env):
         c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
         c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
         c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
-
+        additional = {"time":self.timestep}
         #detect "game over" state
-        if self.Play != "action" and (self.timestep >= 28600 or c1 or c2 or c3):
+        if self.Play != "action" and (self.timestep >= 3600 or c1 or c2 or c3):
             episode_over = True
+            self.timestep = 0
+            time.sleep(1.0)
             self.conn.load(self.argslist[1:])
+            time.sleep(1.0)
 
-        return obs, reward, episode_over, {}
+
+        return obs, reward, episode_over, additional
 
     def _reset(self):
+        self.timestep = 0
         #go back to the first step of the return
         if self.Play != None and self.Play != "action":
             self.conn.trafficlight.setProgram(self.tlsID, self.Play)
