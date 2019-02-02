@@ -39,6 +39,8 @@ class GharrafaBasicEnv(gym.Env):
         10: "G W BY E"
         }
 
+        self.monitored_edges = [7552, 7553, 7554, 7556, 7558, 7560, 7562, 7563, 7565, 7574, 6043, 7593, 7594, 7621, 7623, 10324, 10339, 6124, 7665, 7542, 7673, 7547, 7548, 7549, 7550]
+
         self.DETECTORS = []
         with open(module_path +"/assets/gharrafa_detectors") as fdet:
             for detname in fdet:
@@ -71,15 +73,15 @@ class GharrafaBasicEnv(gym.Env):
             sumoBinary = set_sumo_home.sumoBinary
 
         self.argslist = [sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
-                             "--collision.action", "none",
+                             "--collision.action", "remove",
             "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1",
             "--collision.mingap-factor", "0",
-            "--collision.check-junctions", "true"]
+            "--collision.check-junctions", "true", "--no-step-log"]
 
         if self.Play:
-            self.argslist.append("--game")
+            #self.argslist.append("--game")
             self.argslist.append("--window-size")
-            self.argslist.append("800,1350")
+            self.argslist.append("1000,1000")
 
         # if self.GUI:
         #     self.arglist.append("--gui-settings-file")
