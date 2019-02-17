@@ -39,7 +39,31 @@ class GharrafaBasicEnv(gym.Env):
         10: "G W BY E"
         }
 
-        self.monitored_edges = [7552, 7553, 7554, 7556, 7558, 7560, 7562, 7563, 7565, 7574, 6043, 7593, 7594, 7621, 7623, 10324, 10339, 6124, 7665, 7542, 7673, 7547, 7548, 7549, 7550]
+        self.monitored_edges = ["7552",
+        "7553",
+        "7554",
+        "7556",
+        "7558",
+        "7560",
+        "7562",
+        "7563",
+        "7565",
+        "7574",
+        "6043",
+        "7593",
+        "7594",
+        "7621",
+        "7623",
+        "10324",
+        "10339",
+        "6124",
+        "7665",
+        "7542",
+        "7673",
+        "7547",
+        "7548",
+        "7549",
+        "7550"]
 
         self.DETECTORS = []
         with open(module_path +"/assets/gharrafa_detectors") as fdet:
@@ -96,6 +120,9 @@ class GharrafaBasicEnv(gym.Env):
     def __del__(self):
         self.conn.close()
 
+    def closeconn(self):
+        self.conn.close()
+
     def _selectPhase(self,target):
         target = self.PHASES[target]
         current_program = self.conn.trafficlight.getProgram(self.tlsID)
@@ -115,48 +142,119 @@ class GharrafaBasicEnv(gym.Env):
         else:
             transition_program = "from %s to %s" % (source,target)
             self.conn.trafficlight.setProgram(self.tlsID, transition_program)
+            self.conn.trafficlight.setPhase(self.tlsID, 0)
             return True
 
     def _observeState(self):
         #selftimestep = self.conn.simulation.getCurrentTime()/1000
         lastVehiclesVector = np.zeros(len(self.DETECTORS),dtype=np.float32)
         reward = 0
+
+        #initialize accumulators for Play mode measures
+        ACCgetWaitingTime = 0
+        ACCgetTravelTime = 0
+
+        ACCgetLastStepOccupancy = 0
+        ACCgetLastStepMeanSpeed = 0
+        ACCgetLastStepHaltingNumber = 0
+
+        ACCgetCO2Emission = 0
+        ACCgetNOxEmission = 0
+        ACCgetHCEmission = 0
+        ACCgetNoiseEmission = 0
+
+        ACCgetArrivedNumber = 0
+        ACCgetDepartedNumber = 0
+        #ACCgetCollidingVehiclesNumber = 0
+
+        measures = {}
+
+
         for i in range(int(self.OBSERVEDPERIOD/self.SUMOSTEP)):
             self.conn.simulationStep()
             self.timestep += self.SUMOSTEP #self.conn.simulation.getCurrentTime()/1000
             lastVehiclesVector += np.array([np.float32(self.conn.inductionloop.getLastStepVehicleNumber(detID)) for detID in self.DETECTORS])
             reward += np.sum([self.conn.inductionloop.getLastStepVehicleNumber(detID) for detID in self.DETECTORS if "out_for" in detID])
+            if self.Play != None:
+                #measure delay,emissions etc. from selected edges
+                ACCgetWaitingTime += np.mean([self.conn.edge.getWaitingTime(edgeID) for edgeID in self.monitored_edges])  #must average over micro steps
+                ACCgetTravelTime += np.mean([self.conn.edge.getTraveltime(edgeID) for edgeID in self.monitored_edges])  #must average over micro steps
+
+                ACCgetLastStepOccupancy += np.mean([self.conn.edge.getLastStepOccupancy(edgeID) for edgeID in self.monitored_edges])  # must average over micro steps
+                ACCgetLastStepMeanSpeed += np.mean([self.conn.edge.getLastStepMeanSpeed(edgeID) for edgeID in self.monitored_edges])  # must average over micro steps
+                ACCgetLastStepHaltingNumber += np.mean([self.conn.edge.getLastStepHaltingNumber(edgeID) for edgeID in self.monitored_edges])  # must average over micro steps
+
+                ACCgetCO2Emission += np.sum([self.conn.edge.getCO2Emission(edgeID) for edgeID in self.monitored_edges])  # must sum over micro steps
+                ACCgetNOxEmission += np.sum([self.conn.edge.getNOxEmission(edgeID) for edgeID in self.monitored_edges])  # must sum over micro steps
+                ACCgetHCEmission += np.sum([self.conn.edge.getHCEmission(edgeID) for edgeID in self.monitored_edges])  # must sum over micro steps
+                ACCgetNoiseEmission += np.sum([self.conn.edge.getNoiseEmission(edgeID) for edgeID in self.monitored_edges])  # must sum over micro steps
+
+                ACCgetArrivedNumber += self.conn.simulation.getArrivedNumber()  # must sum over micro steps
+                ACCgetDepartedNumber += self.conn.simulation.getDepartedNumber()  # must sum over micro steps
+                #ACCgetCollidingVehiclesNumber += self.conn.simulation.getCollidingVehiclesNumber()  # must sum over micro steps
+
+        measures = {
+        "WaitingTime" : ACCgetWaitingTime/(i+1),
+        "TravelTime" : ACCgetTravelTime/(i+1),
+
+        "Occupancy" : ACCgetLastStepOccupancy/(i+1),
+        "MeanSpeed" : ACCgetLastStepMeanSpeed/(i+1),
+        "HaltingNumber" : ACCgetLastStepHaltingNumber/(i+1),
+
+        "CO2Emission" : ACCgetCO2Emission,
+        "NOxEmission" : ACCgetNOxEmission,
+        "HCEmission" : ACCgetHCEmission,
+        "NoiseEmission" : ACCgetNoiseEmission,
+
+        "ArrivedNumber" : ACCgetArrivedNumber,
+        "DepartedNumber" : ACCgetDepartedNumber,
+
+        "Reward" : reward#,
+        #"CollidingVehiclesNumber" : ACCgetCollidingVehiclesNumber
+        }
 
         obs = lastVehiclesVector
 
         #TODO: build observation
-        return obs,reward
+        return obs,reward,measures
 
     def _step(self, action):
         if self.Play != None and self.Play != "action":
-            obs,reward = self._observeState()
-            return obs, reward, False, {}
+            obs,reward,measures = self._observeState()
+            measures["time"] = self.timestep
+
+            #episodic conditions
+            c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
+            c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
+            c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
+
+            return obs, reward, (c1 or c2 or c3), measures
+
         episode_over=False
         self._selectPhase(action)
 
         #get state and reward
-        obs,reward = self._observeState()
+        obs,reward,measures = self._observeState()
 
         #episodic conditions
         c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
         c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
         c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
-        additional = {"time":self.timestep}
+        measures["time"] = self.timestep
+        #additional = {"time":self.timestep}
         #detect "game over" state
         if self.Play != "action" and (self.timestep >= 3600 or c1 or c2 or c3):
+        #if self.timestep >= 3600 or c1 or c2 or c3:
             episode_over = True
             self.timestep = 0
             time.sleep(1.0)
             self.conn.load(self.argslist[1:])
             time.sleep(1.0)
 
+        if self.Play == "action" and (self.timestep >= 3600 or c1 or c2 or c3):
+            episode_over = True
 
-        return obs, reward, episode_over, additional
+        return obs, reward, episode_over, measures
 
     def _reset(self):
         self.timestep = 0

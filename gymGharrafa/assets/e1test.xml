@@ -1,4 +1,5 @@
 <additionals>
+    <!--<timedEvent type="SaveTLSSwitchStates" source ="6317" dest="/home/srizzo/tls_switch_states_fixed.xml"/>-->
     <e1Detector id="E_in_back_0" lane="7574_0" pos="12.00" freq="20.00" file="/tmp/E_in_back_0.txt" friendlyPos="1"/>
     <e1Detector id="E_in_back_1" lane="7574_1" pos="12.00" freq="20.00" file="/tmp/E_in_back_1.txt" friendlyPos="1"/>
     <e1Detector id="E_in_back_2" lane="7574_2" pos="12.00" freq="20.00" file="/tmp/E_in_back_2.txt" friendlyPos="1"/>
