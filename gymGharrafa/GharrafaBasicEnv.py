@@ -84,6 +84,7 @@ class GharrafaBasicEnv(gym.Env):
         self.runcode = "".join(random.choices(string.ascii_lowercase + string.digits, k=6))
 
         self.timestep = 0
+        self.rewards = []
 
         self._configure_environment()
 
@@ -142,7 +143,6 @@ class GharrafaBasicEnv(gym.Env):
         else:
             transition_program = "from %s to %s" % (source,target)
             self.conn.trafficlight.setProgram(self.tlsID, transition_program)
-            self.conn.trafficlight.setPhase(self.tlsID, 0)
             return True
 
     def _observeState(self):
@@ -215,7 +215,7 @@ class GharrafaBasicEnv(gym.Env):
 
         obs = lastVehiclesVector
 
-        #TODO: build observation
+        self.rewards.append(reward)
         return obs,reward,measures
 
     def _step(self, action):
@@ -223,12 +223,21 @@ class GharrafaBasicEnv(gym.Env):
             obs,reward,measures = self._observeState()
             measures["time"] = self.timestep
 
-            #episodic conditions
+            #episodic conditions for junction interference
             c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
             c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
             c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
+            c4 = self.conn.lane.getLastStepHaltingNumber("6522_1")>10
 
-            return obs, reward, (c1 or c2 or c3), measures
+            #episodic condition of waiting time
+            cwait = np.max([self.conn.edge.getWaitingTime(edgeID) for edgeID in self.monitored_edges]) >= 300
+
+            #episodic condition for green idling
+            cgreen = len(self.rewards) >= 12 and sum(self.rewards[-6:]) == 0
+
+
+
+            return obs, reward, (c1 or c2 or c3 or c4 or cwait or cgreen), measures
 
         episode_over=False
         self._selectPhase(action)
@@ -236,14 +245,23 @@ class GharrafaBasicEnv(gym.Env):
         #get state and reward
         obs,reward,measures = self._observeState()
 
-        #episodic conditions
+        #episodic conditions for junction interference
         c1 = self.conn.lane.getLastStepHaltingNumber("7594_2")>10
         c2 = self.conn.lane.getLastStepHaltingNumber("6511_1")>10
         c3 = self.conn.lane.getLastStepHaltingNumber("7673_0")>10
+        c4 = self.conn.lane.getLastStepHaltingNumber("6522_1")>10
+
+        #episodic condition of waiting time
+        cwait = np.max([self.conn.edge.getWaitingTime(edgeID) for edgeID in self.monitored_edges]) >= 300
+
+        #episodic condition for green idling
+        cgreen = len(self.rewards) >= 12 and sum(self.rewards[-6:]) == 0
+
+
         measures["time"] = self.timestep
         #additional = {"time":self.timestep}
         #detect "game over" state
-        if self.Play != "action" and (self.timestep >= 3600 or c1 or c2 or c3):
+        if self.Play != "action" and (self.timestep >= 3600 or c1 or c2 or c3 or c4 or cwait or cgreen):
         #if self.timestep >= 3600 or c1 or c2 or c3:
             episode_over = True
             self.timestep = 0
@@ -251,7 +269,7 @@ class GharrafaBasicEnv(gym.Env):
             self.conn.load(self.argslist[1:])
             time.sleep(1.0)
 
-        if self.Play == "action" and (self.timestep >= 3600 or c1 or c2 or c3):
+        if self.Play == "action" and (self.timestep >= 3600 or c1 or c2 or c3 or c4 or cwait or cgreen):
             episode_over = True
 
         return obs, reward, episode_over, measures
