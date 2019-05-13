@@ -43,3 +43,11 @@ register(
     max_episode_steps = 86400,
     reward_threshold = 2500
 )
+
+register(
+    id='gymGharrafa-v5',
+    entry_point='gymGharrafa:GharrafaBasicEnv',
+    kwargs={'GUI' : True, 'Generate': True},
+    max_episode_steps = 86400,
+    reward_threshold = 2500
+)

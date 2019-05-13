@@ -17,7 +17,7 @@ import traci
 module_path = os.path.dirname(__file__)
 
 class GharrafaBasicEnv(gym.Env):
-    def __init__(self,GUI=True,Play=None):
+    def __init__(self,GUI=True,Play=None,Generate=False):
 
         self.tlsID = "6317"
         self._seed = 31337
