@@ -1,7 +1,7 @@
 # gym-gharrafa
 #### **OpenAI Gym environment bundle for simulation of the Al Gharafa roundabout in Doha**
-#### Note: this version is for reproducibility of the KDD paper, it is not maintained anymore.
-#### Please find new version here: https://github.com/qcri/TrafQ
+#### Note: this version is online for the reproducibility of the KDD paper, however it is not maintained anymore.
+#### Please find the new version here: https://github.com/qcri/TrafQ together with new environments.
 
 ---
 
