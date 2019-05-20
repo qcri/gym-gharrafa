@@ -252,7 +252,7 @@ class GharrafaBasicEnv(gym.Env):
         c4 = self.conn.lane.getLastStepHaltingNumber("6522_1")>10
 
         #episodic condition of waiting time
-        cwait = np.max([self.conn.edge.getWaitingTime(edgeID) for edgeID in self.monitored_edges]) >= 300
+        cwait = False#np.max([self.conn.edge.getWaitingTime(edgeID) for edgeID in self.monitored_edges]) >= 300
 
         #episodic condition for green idling
         cgreen = len(self.rewards) >= 12 and sum(self.rewards[-6:]) == 0
@@ -268,6 +268,7 @@ class GharrafaBasicEnv(gym.Env):
             time.sleep(1.0)
             self.conn.load(self.argslist[1:])
             time.sleep(1.0)
+            self.rewards = []
 
         if self.Play == "action" and (self.timestep >= 3600 or c1 or c2 or c3 or c4 or cwait or cgreen):
             episode_over = True
@@ -276,6 +277,7 @@ class GharrafaBasicEnv(gym.Env):
 
     def _reset(self):
         self.timestep = 0
+        self.rewards = []
         #go back to the first step of the return
         if self.Play != None and self.Play != "action":
             self.conn.trafficlight.setProgram(self.tlsID, self.Play)

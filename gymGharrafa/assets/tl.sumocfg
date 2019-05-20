@@ -1,7 +1,7 @@
 <configuration>
     <input>
         <net-file value="gharrafa.net.xml"/>
-        <route-files value="od_generated.rou.xml"/>
+        <route-files value="od_002.rou.xml"/>
         <gui-settings-file value="gui.settings.xml"/>
 	<additional-files value="e1test.xml"/>
 
