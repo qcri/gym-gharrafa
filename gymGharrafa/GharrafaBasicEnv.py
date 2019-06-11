@@ -1,4 +1,5 @@
 from .assets import set_sumo_home
+from .assets import ODrandomizer
 
 import logging
 import os
@@ -24,6 +25,7 @@ class GharrafaBasicEnv(gym.Env):
 
         self.GUI = GUI
         self.Play = Play
+        self.Generate = Generate
 
         self.PHASES = {
         0: "G E",
@@ -97,11 +99,17 @@ class GharrafaBasicEnv(gym.Env):
         else:
             sumoBinary = set_sumo_home.sumoBinary
 
-        self.argslist = [sumoBinary, "-c", module_path+"/assets/tl.sumocfg",
+        cfgfile = module_path+"/assets/tl.sumocfg"
+        if self.Generate:
+            ODrandomizer.randomize()
+            cfgfile = module_path+"/assets/tl_auto.sumocfg"
+
+        self.argslist = [sumoBinary, "-c", cfgfile,
                              "--collision.action", "remove",
             "--step-length", str(self.SUMOSTEP), "-S", "--time-to-teleport", "-1",
             "--collision.mingap-factor", "0",
-            "--collision.check-junctions", "true", "--no-step-log"]
+            "--collision.check-junctions", "true", "--no-step-log",
+            "--device.rerouting.with-taz", "true"]
 
         if self.Play:
             #self.argslist.append("--game")
